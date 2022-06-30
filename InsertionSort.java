@@ -1,7 +1,7 @@
 import java.util.Random;
 
-public class SelectionSort {
-
+public class InsertionSort {
+    
     public static void main(String[] args) {
         
         Random gerador = new Random();
@@ -13,17 +13,16 @@ public class SelectionSort {
         }
         System.out.println();
 
-        for(int i = 0; i < v.length; i++){
-                int i_menor = i;
-            for(int j = i +1; j < v.length; j++){
-                if(v[j] > v[i_menor]){ //crescente v[j] < v[i_menor] ou decrescente v[j] > v[i_menor]
-                    i_menor = j;
-                }
+        for (int i = 1; i < v.length; i++) { 
+		
+            int j = i;
+        
+            while (j > 0 && v[j] < v[j-1]) { // crescente j > 0 && v[j] < v[j-1] ou decrescente j > 0 && v[j] > v[j-1]
+                int aux = v[j];
+                v[j] = v[j - 1];
+                v[j - 1] = aux;
+                j -= 1;
             }
-
-            int aux = v[i];
-            v[i] = v[i_menor];
-            v[i_menor] = aux;
         }
 
         for (int i = 0; i < v.length; i++) {

@@ -1,9 +1,9 @@
 import java.util.Random;
 
-public class SelectionSort {
+public class BubbleSort {
 
     public static void main(String[] args) {
-        
+
         Random gerador = new Random();
         int v[] = new int[10];
         
@@ -12,22 +12,21 @@ public class SelectionSort {
             System.out.print(" "+v[i]);  
         }
         System.out.println();
-
-        for(int i = 0; i < v.length; i++){
-                int i_menor = i;
-            for(int j = i +1; j < v.length; j++){
-                if(v[j] > v[i_menor]){ //crescente v[j] < v[i_menor] ou decrescente v[j] > v[i_menor]
-                    i_menor = j;
+        
+        for(int i = v.length; i >= 1; i --){
+            for(int j = 1; j < i; j++){
+                if(v[j - 1] > v[j]){ // crescente v[j - 1] > v[j] ou decrescente v[j - 1] < v[j]
+                    int aux = v[j];
+                    v[j] = v[j - 1];
+                    v[j - 1] = aux;
                 }
             }
-
-            int aux = v[i];
-            v[i] = v[i_menor];
-            v[i_menor] = aux;
         }
 
         for (int i = 0; i < v.length; i++) {
             System.out.print(" "+v[i]);
         }
+        System.out.println();
     }
+    
 }
