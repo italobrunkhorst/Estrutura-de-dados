@@ -6,12 +6,14 @@ public class InsertionSort {
         
         Random gerador = new Random();
         int v[] = new int[10];
+        long tempo;
         
+        long tempoInicial = System.currentTimeMillis();
         for(int i=0; i<v.length;i++){
             v[i]= new Random().nextInt(20);
-            System.out.print(" "+v[i]);  
+            //System.out.print(" "+v[i]);  
         }
-        System.out.println();
+        //System.out.println();
 
         for (int i = 1; i < v.length; i++) { 
 		
@@ -24,9 +26,13 @@ public class InsertionSort {
                 j -= 1;
             }
         }
-
+        System.out.println("10");
         for (int i = 0; i < v.length; i++) {
-            System.out.print(" "+v[i]);
+            //System.out.print(" "+v[i]);
         }
+        long tempoFinal = System.currentTimeMillis();
+        tempo = tempoFinal - tempoInicial;
+        System.out.println(" "+tempo);
+        //System.out.printf(" ms%n", (tempoFinal - tempoInicial) );
     }
 }

@@ -5,11 +5,11 @@ public class SelectionSort {
     public static void main(String[] args) {
         
         Random gerador = new Random();
-        int v[] = new int[10];
+        int v[] = new int[100];
         
         for(int i=0; i<v.length;i++){
             v[i]= new Random().nextInt(20);
-            System.out.print(" "+v[i]);  
+            //System.out.print(" "+v[i]);  
         }
         System.out.println();
 
@@ -27,7 +27,7 @@ public class SelectionSort {
         }
 
         for (int i = 0; i < v.length; i++) {
-            System.out.print(" "+v[i]);
+            //System.out.print(" "+v[i]);
         }
     }
 }

@@ -8,14 +8,14 @@ public class QuickMeio {
         Random gerador = new Random();
 
         for (int i = 0; i < v.length; i++) {
-            v[i] = gerador.nextInt(50);
-            System.out.print(" [" + v[i] + "]");
+            v[i] = gerador.nextInt(20);
+            System.out.print(" "+v[i]); 
         }
         System.out.println();
 
-        Meio(v, 0, v.length - 1);
+        Meio(v, 0, 9);
         for (int i = 0; i < v.length; i++) {
-            System.out.print("(" + v[i] + ")");
+            System.out.print(" "+v[i]); 
         }
         System.out.println();
     }
