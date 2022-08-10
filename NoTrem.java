@@ -1,15 +1,15 @@
-public class NoLista{
+public class NoTrem{
     private String item;
-    private NoLista proximoNo;
+    private NoTrem proximoNo;
 
-    public NoLista(){
+    public NoTrem(){
     }
 
-    public NoLista(String item){
+    public NoTrem(String item){
         this.item = item;
     }
 
-    public NoLista(String item, NoLista no){
+    public NoTrem(String item, NoTrem no){
         this.item = item;
         this.proximoNo = no;
     }
@@ -18,11 +18,11 @@ public class NoLista{
         return item;
     }
 
-    public NoLista getProximoNo() {
+    public NoTrem getProximoNo() {
         return proximoNo;
     }
 
-    public void setProximoNo(NoLista no) {
+    public void setProximoNo(NoTrem no) {
         this.proximoNo = no;
     }
 

@@ -1,17 +1,17 @@
-public class Lista{
+public class Trem{
 
     private int posicao = 0;
-    private NoLista primeiroNo;
+    private NoTrem primeiroNo;
 
-    public Lista(){}
+    public Trem(){}
 
     public int qtdaDeElementosLista(){
         return posicao;
     }
 
-    private NoLista getNo(int lugar){
+    private NoTrem getNo(int lugar){
 
-        NoLista aux = primeiroNo;
+        NoTrem aux = primeiroNo;
 
         for (int i = 0; i < lugar; i++){
             aux = aux.getProximoNo();
@@ -21,7 +21,7 @@ public class Lista{
 
     public void incluir(String item){
 
-        NoLista novoNo = new NoLista(item);
+        NoTrem novoNo = new NoTrem(item);
 
         if (posicao == 0){
             primeiroNo = novoNo;
@@ -29,7 +29,7 @@ public class Lista{
             return;
         }
 
-        NoLista aux = primeiroNo;
+        NoTrem aux = primeiroNo;
         for (int i = 0; i < posicao - 1; i++){
             aux = aux.getProximoNo();
         }
@@ -41,12 +41,12 @@ public class Lista{
 
     public boolean incluirPosicao(String item, int lugar){
 
-        NoLista novoNo = new NoLista(item);
+        NoTrem novoNo = new NoTrem(item);
 
         if (posicao == 0 && lugar == 0)
             primeiroNo = novoNo;
         else if(lugar <= posicao && lugar > 0){
-            NoLista aux = getNo(lugar);
+            NoTrem aux = getNo(lugar);
             novoNo.setProximoNo(aux);
 
             aux = getNo(lugar - 1);
@@ -67,7 +67,7 @@ public class Lista{
                 return true;
             }else{
                 if (lugar <= posicao - 1 && lugar > 0){
-                    NoLista aux = getNo(lugar - 1);
+                    NoTrem aux = getNo(lugar - 1);
                     aux.setProximoNo(aux.getProximoNo().getProximoNo());
 
                     posicao--;
@@ -81,13 +81,13 @@ public class Lista{
     }
 
     public String listar(){
-        String lista = "Lista";
+        String lista = "Trem-";
 
-        NoLista aux = primeiroNo;
+        NoTrem aux = primeiroNo;
 
         for (int i = 0; i < posicao; i++){
 
-            lista += " -> "+aux.getItem();
+            lista += "|"+aux.getItem()+"|-";
 
             aux = aux.getProximoNo();
         }
