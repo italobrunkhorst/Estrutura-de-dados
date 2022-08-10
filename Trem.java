@@ -57,7 +57,7 @@ public class Trem{
         return true;
     }
 
-    public boolean excluir(int lugar){
+    public boolean remover(int lugar){
 
         if (posicao != 0) {
             if (lugar == 0) {

@@ -41,7 +41,7 @@ public class MainTrem{
             if(opcao == 3){ 
                 System.out.print("Digite a posicao a ser removida: ");
                 opcao = scan.nextInt();
-                System.out.println(trem.excluir(opcao)?"\nRemovido com sucesso":"\nNao foi possivel remover o vagao");
+                System.out.println(trem.remover(opcao)?"\nRemovido com sucesso":"\nNao foi possivel remover o vagao");
             }
 
             if(opcao == 4){
